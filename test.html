@@ -1,0 +1,33 @@
+<html>
+<body>
+<script src="Three.js"></script>
+<script>
+// instantiate a loader
+var loader = new THREE.ObjectLoader();
+
+// load a resource
+loader.load(
+	// resource URL
+	'planet/bumi.obj',
+	// called when resource is loaded
+	function ( object ) {
+
+		scene.add( object );
+
+	},
+	// called when loading is in progresses
+	function ( xhr ) {
+
+		console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
+
+	},
+	// called when loading has errors
+	function ( error ) {
+
+		console.log( 'An error happened' );
+
+	}
+);
+</script>
+</body>
+</html>
